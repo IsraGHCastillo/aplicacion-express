@@ -110,3 +110,11 @@ app.post('/agrega_tod', (req, res) => {
 
     res.status(201).send({ message: 'TODO agregado exitosamente', todo });
 });
+
+
+CREATE TABLE todos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    todo TEXT NOT NULL,
+    created_at INTENGER
+);
+
