@@ -89,3 +89,24 @@ const port = 3000;
 app.listen(port, () => {
     console.log(`Aplicación corriendo en http://localhost:${port}`)
 })
+
+
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.use(express.json());
+
+app.listen(port, () => {
+    console.log(`servidor corriendo en http://localhost:${port}`);
+});
+
+
+//crear el endpoint agrega_todo que recibirá datos usando el post
+
+app.post('/agrega_tod', (req, res) => {
+    const todo = req.body; //con los datos en formato json
+    console.log('Nuevo TODO recibido:', todo);
+
+    res.status(201).send({ message: 'TODO agregado exitosamente', todo });
+});
